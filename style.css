@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+width: 100%;
+background: #0b0f19;
+
+}
+html {scroll-behavior: smooth;}
+main {
+    width: 100%;
+}
+nav {
+    display: flex;
+    width: 100%;
+    padding: 20px 60px 20px 40px;
+    background-color: #0b0f19;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+nav p {
+    color: #22d3ee;
+    font-size: 20px;
+    font-weight: bold;
+}
+ul {
+    display: flex;
+    gap: 60px;
+    margin-left: auto;  
+}
+li {
+    list-style-type: none;  
+    transition: 0.3s;
+}
+
+li:hover{
+   border-bottom: 2px solid #22d3ee;
+}
+
+li a {
+    text-decoration: none;
+    color: #f8fafc;
+}
+
+
+#profil {
+    display: flex;
+    margin: 150px 0px 50px 30px;
+    align-items: center;
+
+}
+#profil .texte {
+    width: 60%;
+}
+#profil .texte h1 {
+font-size: 60px;
+}
+#profil .texte h1.white {
+color: white;
+}
+#profil .texte h1.blue {
+color: #22d3ee;
+}
+
+#profil .texte p {
+    font-size: 20px;
+}
+
+#profil .texte p.self {
+    color: #b9babbbb;
+    margin-top: 25px;
+}
+#profil .texte button {
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+}
+#profil .texte button.first {
+    background: #22d3ee;
+}
+#profil .texte button.first:hover {
+    background: #22d3ee;
+}
+#profil .texte button.second {
+    color: white;
+    background: #0b0f19;
+    border: 1px solid#22d3ee;
+}
+#profil .profil {
+    width: 30%;
+    margin-left: 100px;
+}
+#profil .profil img {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background-color: #0b0f19;
+    box-shadow: 0 1px 40px #22d3ee;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+#apropos {
+    width: 90%;
+    max-width: 1400px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    margin: 120px auto;
+}
+#apropos .texte {
+    width: 45%;
+}
+#apropos .texte span {
+    color: #00d9ff;
+}
+#apropos .texte h2 {
+    font-size: 68px;
+    margin: 10px 0 40px;
+    line-height: 70px;
+}
+#apropos .texte h2 span {
+    text-shadow: 0 0 15px rgba(47, 181, 204, .6);
+
+}
+
+#apropos .texte p {
+    font-size: 20px;
+    line-height: 38px;
+    text-align: justify;
+    color: #d8d8d8;
+}
+#apropos .texte .name {
+    margin-top: 35px;
+    color: #00d9ff;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: inline-block;
+    position: relative;  
+}
+#apropos .texte .name::after {
+    content: "";
+    width: 90px;
+    height: 3px;
+    background: #00d9ff;
+    display: block;
+    margin-top: 8px;
+}
+#apropos .experience {
+    width: 55%;
+}
+#apropos .experience .cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+#apropos .experience .card {
+    height: 190px;
+    background: #111827;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1s;
+
+}
+#apropos .experience .card:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: #152238;
+    box-shadow: 0 0 30px rgba(27, 181, 204, .7);
+}
+#apropos .experience .card:hover h2 {
+    text-shadow: 0 1px 30px #00d9ff;
+    transition: 1s;
+
+}
+#apropos .experience .card h2 {
+    color: #00d9ff;
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+#apropos .experience .card p {
+    color: #d9d9d9;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+#projets {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 8%;
+    background-color: linear-gradient(180deg,#060b16,#0b1324,#05070d);
+}
+#projets h2 {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+#projets h2 span {
+    color: #00d9ff;
+}
+#projets p.section {
+    color: #a5b4c3;
+    font-size: 18px;
+    margin-bottom: 70px;
+}
+#projets .cards {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+#projets .card {
+    width: 360px;
+    min-height: 500px;
+    padding: 40px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition: .45s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,.4);
+}
+#projets .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 60px rgba(0, 217, 255, .25);
+    border: 1px solid #00d9ff;
+}
+#projets .card .texte {
+    padding: 0 20px;
+}
+#projets .card img {
+    width: 90px;
+    height: 90px;
+    padding: 18px;
+    background: #00d9ff20;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    transition: .4s;   
+}
+#projets .card:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0 35px #00d9ff;
+}
+#projets .card span:first-child {
+    color: #00d9ff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    
+}
+
+
+#projets .texte h3 {
+    color: white;
+    margin: 18px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+#projets .card p {
+    color: #b6c2d1;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-size: 17px;
+
+}
+#projets  .card span:last-child {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #00d9ff20;
+    color: #00d9ff;
+    border-radius: 20px;
+     border: 1px solid #00d9ff;
+     font-size: 14px;
+     font-weight: 600;
+
+}
+/*
+#projets {
+    color: white;
+    margin: 100px 20px;
+    width: 100%;
+}
+
+#projets .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-gap: 30px;
+}
+#projets .card {
+    padding: 0 0 20px 0;
+    background: #111827;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+#projets .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 1px 15px #1bb5cc;
+}
+#projets .card .texte {
+    padding: 0 20px;
+}
+#projets .card img {
+    display: block;
+    margin: 100px auto;
+    width: 120px;
+    height: 120px;
+    
+}
+#projets .card span {
+    
+    
+}
+#projets h2 {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+#projets h2 span {
+    color: #1bb5cc;
+}
+#projets h3 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+#projets p {
+    font-size: 20px;
+    color: #b9babbbb;
+
+}
+#projets span {
+    color: #1bb5cc;
+
+}
+
+
+*/
