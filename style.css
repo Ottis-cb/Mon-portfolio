@@ -47,64 +47,111 @@ li a {
 
 
 #profil {
+    min-height: 100vh;
     display: flex;
-    margin: 150px 0px 50px 30px;
+    justify-content: space-between;
     align-items: center;
+    gap: 70px;
+    padding: 120px 5%;
 
 }
 #profil .texte {
-    width: 60%;
+    flex: 1;
+    animation: fadeLeft 2s ease;
+}
+.salut {
+    color: #00d9ff;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 #profil .texte h1 {
-font-size: 60px;
+    margin-top: 15px;
+    font-size: 65px;
+    line-height: 1.1;
+    color: white;
+
 }
-#profil .texte h1.white {
-color: white;
+#profil .texte h1 span {
+color: #00d9ff;
 }
-#profil .texte h1.blue {
-color: #22d3ee;
+
+
+#profil .texte h2 {
+    margin-top: 15px;
+    font-size: 34px;
+    color: #bfbfbf;
+    font-weight: 600;
 }
 
 #profil .texte p {
-    font-size: 20px;
+    margin-top: 30px;
+    max-width: 620px;
+    color: #b5b5b5;
+    font-size: 18px;
+    line-height: 1.9;
 }
 
-#profil .texte p.self {
-    color: #b9babbbb;
-    margin-top: 25px;
+#profil .texte .buttons {
+    display: flex;
+    margin-top: 40px;
+    gap: 20px;
 }
-#profil .texte button {
-    margin-top: 20px;
-    width: 150px;
-    height: 50px;
-    padding: 5px 10px;
-    margin-right: 10px;
-    border-radius: 20px;
-    border: none;
-    font-weight: bold;
+
+#profil .texte .buttons .btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .35s;
 }
-#profil .texte button.first {
-    background: #22d3ee;
+.first {
+    background: #00d9ff;
+    color: #081018;
 }
-#profil .texte button.first:hover {
-    background: #22d3ee;
+.first:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 35px rgba(34, 211, 238, .5);
 }
-#profil .texte button.second {
+.second {
+    border: 2px solid #00d9ff;
     color: white;
-    background: #0b0f19;
-    border: 1px solid#22d3ee;
+}
+.second:hover {
+    background: #00d9ff;
+    color: #081018;
+    transform: translateY(-6px);
+
 }
 #profil .profil {
-    width: 30%;
-    margin-left: 100px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeRight 2s ease;
 }
-#profil .profil img {
-    width: 380px;
-    height: 380px;
+#profil .profil .image {
+    width: 390px;
+    height: 390px;
     border-radius: 50%;
-    background-color: #0b0f19;
-    box-shadow: 0 1px 40px #22d3ee;
-    animation: float 4s ease-in-out infinite;
+    display: flex;
+    background-color: linear-gradient(135deg, #00d9ff,#0ea5e9);
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    animation: float 5s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(34, 211, 238, .5);
+
+}
+
+#profil .profil .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    background: #081018;
 }
 
 @keyframes float{
@@ -112,10 +159,30 @@ color: #22d3ee;
         transform: translateY(0);
     }
     50%{
-        transform: translateY(-8px);
+        transform: translateY(-18px);
     }
     100%{
         transform: translateY(0);
+    }
+}
+@keyframes fadeLeft{
+    from{
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeRight{
+    from{
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -197,6 +264,7 @@ color: #22d3ee;
 #apropos .experience .card:hover h2 {
     text-shadow: 0 1px 30px #00d9ff;
     transition: 1s;
+    transform: scale(1.1);
 
 }
 #apropos .experience .card h2 {
