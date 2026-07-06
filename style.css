@@ -10,6 +10,7 @@ font-family: 'Inter', sans-serif;
 
 }
 html {scroll-behavior: smooth;}
+
 @font-face {
     font-family: 'Inter';
     src: url(/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf) format('ttf');
@@ -76,9 +77,9 @@ li a {
 
 
 #profil {
+    width: 100%;
     min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 3.1rem;
@@ -104,8 +105,8 @@ li a {
     border-radius: 5px;
     background: rgba(0, 255, 255, 0.1);
     opacity: 0;
-    animation: fadeLeft1 1s ease forwards;
-    animation-delay: 3.5s;
+    animation: fadeLeft1 0.5s ease forwards;
+    animation-delay: 4s;
     
 }
 #profil .terminal .cursor {
@@ -157,8 +158,8 @@ color: #00d9ff;
     align-items: center;
     margin-top: 20px;
     opacity: 0;
-    animation: fadeRight 1s ease forwards;
-    animation-delay: 3.5s;
+    animation: fadeRight 0.5s ease forwards;
+    animation-delay: 4s;
 }
 #profil .texte .icon img {
     width: 35px;
@@ -196,6 +197,7 @@ color: #00d9ff;
     transition: 0.5s;
 }
 #profil .texte .buttons .first:hover {
+    color: white;
     box-shadow: 0 1px 10px#00d9ff;
     transform: translateY(-3px)
     scale(1.05);
@@ -219,19 +221,19 @@ color: #00d9ff;
 
 
 #profil .profil {
-    width: 100%;
-    max-width: 380px;
-    height: auto;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     animation: fadeRight 2s ease forwards;
-    animation-delay: 4.5s;
+    animation-delay: 5s;
     opacity: 0;
 }
 
 #profil .profil img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 400px;
     height: 400px;
     border-radius: 50%;
@@ -267,7 +269,7 @@ color: #00d9ff;
 @keyframes fadeRight{
     from{
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(200px);
     }
     to{
         opacity: 1;
@@ -310,18 +312,21 @@ color: #00d9ff;
 }
 
 #apropos {
-    width: 90%;
-    height: 100vh;
-    max-width: 1400px;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 80px;
-    margin: 120px auto;
+    padding: 30px 5%;
 }
 #apropos .texte {
-    width: 45%;
+    width: 50%;
+    opacity: 0;
+    animation: fadeBottom 2s ease forwards;
+    animation-delay: .7s;
 }
 #apropos .texte span {
     color: #00d9ff;
@@ -330,6 +335,9 @@ color: #00d9ff;
     font-size: 35px;
     line-height: 40px;
     margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeTop 1s ease forwards;
+    animation-delay: 2s;
 }
 #apropos .texte h2 span {
     text-shadow: 0 0 15px rgba(47, 181, 204, .6);
@@ -345,6 +353,9 @@ color: #00d9ff;
 #apropos .texte p.terminal {
     color: #00d9ff;
     font-size: 1rem;
+    opacity: 0;
+    animation: fadeLeft1 .5s ease forwards;
+    animation-delay: 4s;
 }
 #apropos .texte .name {
     margin-top: 35px;
@@ -355,6 +366,9 @@ color: #00d9ff;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: inline-block;
     position: relative;  
+    opacity: 0;
+    animation: fadeRight .5s ease forwards;
+    animation-delay: 4s;
 }
 #apropos .texte .name::after {
     content: "";
@@ -365,16 +379,18 @@ color: #00d9ff;
     margin-top: 8px;
 }
 #apropos .experience {
-    width: 55%;
+    width: 50%;
 }
+
 #apropos .experience .cards{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
     gap: 25px;
+    
 }
 #apropos .experience .card {
     height: 190px;
-    background: #111827;
+    background: rgba(255,255,255,.05);
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, .08);
     display: flex;
@@ -382,6 +398,9 @@ color: #00d9ff;
     align-items: center;
     text-align: center;
     transition: 1s;
+    opacity: 0;
+    animation: fadeRight 1s ease forwards;
+    animation-delay: 5s;
 
 }
 #apropos .experience .card:hover {
@@ -399,18 +418,24 @@ color: #00d9ff;
     color: #00d9ff;
     font-size: 48px;
     margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeTop1 .5s ease forwards;
+    animation-delay: 7s;
 }
 #apropos .experience .card p {
     color: #d9d9d9;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 15px;
+    opacity: 0;
+    animation: fadeBottom .5s ease forwards;
+    animation-delay: 8s;
 }
 
 #projets {
     width: 100%;
     height: 100vh;
-    padding: 30px 8%;
+    padding: 30px 5%;
     background-color: linear-gradient(180deg,#060b16,#0b1324,#05070d);
 }
 #projets h2 {
@@ -427,13 +452,13 @@ color: #00d9ff;
 #projets .cards {
     display: flex;
     justify-content: center;
-    gap: 35px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 #projets .card {
-    width: 360px;
-    min-height: 500px;
-    padding: 40px;
+    width: 340px;
+    min-height: 400px;
+    padding: 10px;
     border-radius: 25px;
     background: rgba(255,255,255,.05);
     backdrop-filter: blur(15px);
@@ -497,4 +522,231 @@ color: #00d9ff;
      font-weight: 600;
 
 }
-https://mon-portfolio-740hkxh2l-ottis1.vercel.app/
+
+@media (max-width:1000px){
+    #profil {
+        flex-direction: column-reverse;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+
+    }
+    #profil .profil img {
+        width: 350px;
+        height: 350px;
+        
+    }
+    #profil .texte .terminals {
+        display: flex;
+        justify-content: center;
+    }
+    #profil .texte {
+        text-align: center;
+    }
+    #profil .texte h1 {
+        font-size: 3rem;
+    }
+    #profil .icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #profil .buttons {
+        justify-content: center;
+    }
+
+    #apropos {
+        justify-content: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+    #apropos .texte {
+        width: 95%;
+    }
+    #apropos .experience {
+        width: 95%;
+    
+    }
+    #apropos .experience .cards {
+        grid-template-columns: repeat(4,23%);
+        justify-content: center;
+    }
+    #apropos .experience .cards .card {
+        height: 100px;
+    }
+    #apropos .experience .cards .card h2 {
+        font-size: 23px;
+    }
+    #apropos .experience .cards .card p {
+        font-size: 13px;
+    }
+    #projets .cards{
+        display: flex;
+    }
+    #projets .cards .card {
+        width: 45%;
+        padding: 5px;
+    }
+    #projets .cards .card img{
+        width: 70px;
+        height: 70px;
+    }
+    #projets .cards .card .texte h3 {
+        font-size: 1.5rem;
+    }
+    #projets .cards .card .texte p {
+        font-size: 1rem;
+    }
+
+    
+}
+
+@media (max-width:650px) {
+
+    #profil {
+
+    }
+    #profil .profil img {
+        width: 300px;
+        height: 300px;
+        
+    }
+    #profil .texte h1 {
+        font-size: 3rem;
+       
+    }
+    #profil .texte h2 {
+        font-size: 1.6rem;
+    }
+    #profil .texte .icon img {
+    width: 20px;
+    height: 20px;
+    }
+    #profil .texte .buttons button {
+    padding: 8px 15px;
+    font-size: 13px;
+
+
+    }
+    #apropos .texte p {
+        font-size: 18px;
+        line-height: 1.8rem;
+    }
+    #apropos .texte .name {
+        font-size: 19px;
+    }
+    #apropos .texte h2 {
+        font-size: 1.6rem;
+    }
+    #apropos .experience .cards .card h2 {
+        font-size: 25px;
+    }
+
+    #apropos .experience .cards .card p {
+        font-size: 12px;
+    }
+    #projets h2 {
+        font-size: 1.6rem;
+    }
+    #projets .cards .card {
+        width: 45%;
+        min-height: 250px;
+    }
+    #projets .cards .card span {
+        font-size: 0.9rem;
+    }
+    #projets .cards .card h3 {
+        font-size: 1.2rem;
+    }
+
+}
+@media (max-width:450px) {
+    #profil {
+
+    }
+    #profil .profil img {
+        width: 200px;
+        height: 200px;
+        
+    }
+    #profil .terminal {
+        font-size: 0.8rem;
+        width: 250px;
+        padding: 4px;
+        height: 23px;
+    }
+    #profil .terminal .cursor {
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 5px;
+    width: 3px;
+    height: 10px;
+    }
+    #profil .texte h1 {
+        font-size: 2rem;
+       
+    }
+    #profil .texte h2 {
+        font-size: 1.2rem;
+    }
+    #profil .texte p {
+        font-size: 13px;
+        line-height: 1.1rem;
+    }
+    #profil .texte .icon img {
+    width: 15px;
+    height: 15px;
+    }
+    #profil .texte .buttons button {
+    padding: 4px 7px;
+    font-size: 10px;
+
+    }
+    #apropos .texte p.terminal {
+        font-size: 0.8rem;
+    }
+    #apropos .experience .cards .card {
+        height: 50px;
+        border-radius: 15px;
+    }
+    #apropos .experience .cards .card h2 {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    #apropos .experience .cards .card p {
+        font-size: 8px;
+    }
+    #apropos .texte p {
+        font-size: 13px;
+        line-height: 1.3rem;
+    }
+    #apropos .texte .name {
+        font-size: 13px;
+    }
+    #projets p.terminal {
+        font-size: 0.8rem;
+    }
+    #projets p.section{
+        font-size: 1rem;
+        margin-bottom: 20px;
+
+    }
+    #projets h2 {
+        font-size: 1.6rem;
+    }
+    #projets .cards .card {
+        width: 90%;
+        min-height: 250px;
+    }
+    #projets .cards .card span {
+        font-size: 0.7rem;
+    }
+    #projets .cards .card .texte h3 {
+        font-size: 1rem;
+    }
+    #projets .cards .card .texte p {
+        font-size: 12px;
+        line-height: 1rem;
+    }
+}
