@@ -52,8 +52,22 @@ nav p {
     color: #0ef;
     font-size: 25px;
     font-weight: 600;
-    animation: fadeLeft 1s ease;
+    animation: fadeLeft 0.7s ease forwards;
+    animation-delay: 0s;
+    opacity: 0;
 }
+#menu-toggle {
+    display: none;
+}
+nav img {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 15px;
+    right: 13px;
+    display: none;
+}
+
 ul {
     display: flex;
     gap: 60px;
@@ -62,6 +76,9 @@ ul {
 li {
     list-style-type: none;  
     transition: 0.3s;
+    animation: fadeLeft 0.7s ease forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
 }
 
 li:hover{
@@ -73,6 +90,7 @@ li a {
     color: #f8fafc;
     font-size: 18px;
     font-weight: 500;
+    
 }
 
 
@@ -87,9 +105,8 @@ li a {
 
 }
 #profil .texte {
-    flex: 1;
-    min-width: 300px;
-    animation: fadeTop 2s ease;
+    flex: 1.4;
+    min-width: 400px;
 }
 .terminal {
     color: #00d9ff;
@@ -105,8 +122,8 @@ li a {
     border-radius: 5px;
     background: rgba(0, 255, 255, 0.1);
     opacity: 0;
-    animation: fadeLeft1 0.5s ease forwards;
-    animation-delay: 4s;
+    animation: fadeRight 0.7s ease forwards;
+    animation-delay: 0.6s;
     
 }
 #profil .terminal .cursor {
@@ -121,13 +138,14 @@ li a {
 
 #profil .texte h1 {
     margin-top: 1rem;
-    font-size: 4rem;
+    font-size: 4.3rem;
     font-family: 'Space_Grotesk', sans-serif;
-    line-height: 1.1;
+    line-height: 1;
+    letter-spacing: 0.5px;
     color: white;
     opacity: 0;
-    animation: fadeTop1 1s ease forwards;
-    animation-delay: 1.5s;
+    animation: fadeTop1 0.7s ease forwards;
+    animation-delay: 0.9s;
 
 }
 #profil .texte h1 span {
@@ -136,21 +154,29 @@ color: #00d9ff;
 
 
 #profil .texte h2 {
-    margin-top: 0.9rem;
+    margin-top: 0.8rem;
     font-size: 2.2rem;
     color: #bfbfbf;
     font-weight: 600;
     opacity: 0;
-    animation: fadeBottom 1s ease forwards;
-    animation-delay: 2.5s;
+    animation: fadeBottom 0.7s ease forwards;
+    animation-delay: 1.2s;
+}
+#profil .texte h2 span{
+    color: #00d9ff;
 }
 
 #profil .texte p {
-    margin-top: 1.9rem;
-    max-width: 620px;
+    max-width: 760px;
     color: #b5b5b5;
-    font-size: 1.1rem;
-    line-height: 1.9;
+    font-size: 1.7rem;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeRight 0.7s ease forwards;
+    animation-delay: 1.5s;
+}
+#profil .texte p span {
+    color: white;
 }
 #profil .texte .icon {
     display: flex;
@@ -158,8 +184,8 @@ color: #00d9ff;
     align-items: center;
     margin-top: 20px;
     opacity: 0;
-    animation: fadeRight 0.5s ease forwards;
-    animation-delay: 4s;
+    animation: fadeRight 0.7s ease forwards;
+    animation-delay: 1.8s;
 }
 #profil .texte .icon img {
     width: 35px;
@@ -181,10 +207,13 @@ color: #00d9ff;
 }
 
 #profil .texte .buttons button{
-    margin: 30px 20px 0 0;
-    padding: 14px 30px;
+    margin: 30px 25px 0 0;
+    padding: 17px 45px;
     border-radius: 10px;
     border: none;
+    animation: fadeLeft 0.7s ease forwards;
+    animation-delay: 2.1s;
+    opacity: 0;
 }
 #profil .texte .buttons a{
     text-decoration: none;
@@ -193,7 +222,8 @@ color: #00d9ff;
     
 }
 #profil .texte .buttons .first{
-    background: #00d9ff;
+    background: linear-gradient(90deg ,#00e5ff, #51dbf4);
+
     transition: 0.5s;
 }
 #profil .texte .buttons .first:hover {
@@ -221,41 +251,44 @@ color: #00d9ff;
 
 
 #profil .profil {
-    flex: 1;
+    flex: 0.6;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeRight 2s ease forwards;
-    animation-delay: 5s;
+    animation: fadeRight 1s ease forwards;
+    animation-delay: 2.3s;
     opacity: 0;
 }
-
+#profil .profil .border {
+    border-radius: 50%;
+    box-shadow: 0 0 20px #00e5ff ,
+                0 0 50px rgba(0, 229, 255, 0.5);
+    animation: battement 2.3s ease-in-out infinite;
+}
+@keyframes battement {
+    0%{
+        box-shadow: 0 0 15px #00e5ff;
+    }
+    50%{
+        box-shadow: 0 0 40px #00e5ff;
+    }
+    100%{
+        box-shadow: 0 0 15px #00e5ff;
+    }
+}
 #profil .profil img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 400px;
+    width: 490px;
+    height: 490px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
     background: #05070d;
-    box-shadow: -5px 5px  #00d9ff;
-    border: 1px solid#00d9ff;
-    animation: float 5s ease-in-out infinite;
+    border: 1px solid #00d9ff;
 }
 
-@keyframes float{
-    0%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(-18px);
-    }
-    100%{
-        transform: translateY(0);
-    }
-}
 @keyframes fadeTop{
     from{
         opacity: 0;
@@ -297,7 +330,7 @@ color: #00d9ff;
         transform: translateY(0);
     }
 }
-@keyframes fadeLeft1{
+@keyframes fadeLeft{
     from{
         opacity: 0;
         transform: translatex(-200px);
@@ -345,8 +378,8 @@ color: #00d9ff;
 }
 
 #apropos .texte p {
-    font-size: 20px;
-    line-height: 38px;
+    font-size: 1.6rem;
+    line-height: 1.6;
     text-align: justify;
     color: #d8d8d8;
 }
@@ -601,12 +634,39 @@ color: #00d9ff;
 
     
 }
+@media (max-width:850px){
+    #apropos .texte {
+        width: 95%;
+    }
+    nav img {
+        display: block;
+        margin-right: 20px;
+    }
+    nav {
+        backdrop-filter: blur(10px);
+        padding: 20px 33px;
+    }
+    ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        padding-right: 50px;
+        gap: 30px;
+    }
+    nav li a {
+        font-size: 20px;
+    }
+    
 
+    #menu-toggle:checked ~ ul {
+        display: flex;
+    }
+}
 @media (max-width:650px) {
 
-    #profil {
-
-    }
     #profil .profil img {
         width: 300px;
         height: 300px;
@@ -662,9 +722,7 @@ color: #00d9ff;
 
 }
 @media (max-width:450px) {
-    #profil {
-
-    }
+    
     #profil .profil img {
         width: 200px;
         height: 200px;
