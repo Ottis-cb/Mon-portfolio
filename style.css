@@ -156,7 +156,8 @@ color: #00d9ff;
 
 #profil .texte h2 {
     margin-top: 0.8rem;
-    font-size: 2.2rem;
+    margin-bottom: 0;
+    font-size: 2.6rem;
     font-weight: 600;
     opacity: 0;
     animation: fadeBottom 0.7s ease forwards;
@@ -247,7 +248,7 @@ color: #00d9ff;
     
 }
 #profil .texte .buttons .first{
-    background: linear-gradient(90deg ,#00e5ff, #51dbf4);
+    background: linear-gradient(90deg ,#00d9ff, #f4f6f6);
 
     transition: 0.5s;
 }
@@ -286,8 +287,7 @@ color: #00d9ff;
 }
 #profil .profil .border {
     border-radius: 50%;
-    box-shadow: 0 0 20px #00e5ff ,
-                0 0 50px rgba(0, 229, 255, 0.5);
+    box-shadow: linear-gradient(90deg, #00d9ff, white);
     animation: battement 2.3s ease-in-out infinite;
 }
 @keyframes battement {
@@ -310,7 +310,7 @@ color: #00d9ff;
     border-radius: 50%;
     object-fit: cover;
     display: block;
-    background: #05070d;
+    background: linear-gradient(90deg, white, #00d9ff);
     border: 1px solid #00d9ff;
 }
 
@@ -448,23 +448,41 @@ color: #00d9ff;
 }
 #apropos .experience .card {
     height: 190px;
-    background: rgba(255,255,255,.05);
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, .08);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-position: center;
     transition: 1s;
     opacity: 0;
     animation: fadeRight 1s ease forwards;
     animation-delay: 2.5s;
-
 }
 #apropos .experience .card:hover {
     transform: translateY(-10px) scale(1.03);
     background: #152238;
     box-shadow: 0 0 30px rgba(27, 181, 204, .7);
+}
+
+#apropos .experience .c1 {
+    background: url(/Image&icon/840a4c1aeb714bd362894b25ab94316b.jpg);
+    background-position: right;
+}
+#apropos .experience .c2 {
+    background: url(/Image&icon/840a4c1aeb714bd362894b25ab94316b.jpg);
+    background-position: left;
+}
+#apropos .experience .c4 {
+    background: url(/Image&icon/840a4c1aeb714bd362894b25ab94316b.jpg);
+    background-position: top;
+}
+
+#apropos .experience .c3 {
+    background: url(/Image&icon/840a4c1aeb714bd362894b25ab94316b.jpg);
+    background-position: bottom;
+
 }
 #apropos .experience .card:hover h2 {
     text-shadow: 0 1px 30px #00d9ff;
@@ -482,7 +500,7 @@ color: #00d9ff;
     animation-delay: 3s;
 }
 #apropos .experience .card p {
-    color: #d9d9d9;
+    color: #06041a;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 15px;
@@ -490,10 +508,14 @@ color: #00d9ff;
     animation: fadeBottom .5s ease forwards;
     animation-delay: 3.5s;
 }
+#apropos .experience .card:hover p {
+    color: white;
+}
 
 #projets {
     width: 100%;
-    height: 100vh;
+    height: 200vh;
+    margin-bottom: 200px;
     padding: 30px 5%;
     background-color: linear-gradient(180deg,#060b16,#0b1324,#05070d);
 }
@@ -539,9 +561,9 @@ color: #00d9ff;
     height: 60%;
     padding: 18px;
     background: #00d9ff20;
+    border-radius: 5%;
     margin-bottom: 20px;
     transition: .4s; 
-    border-radius: 5%;
 
 }
 
@@ -584,11 +606,13 @@ color: #00d9ff;
     box-shadow: 0 0 10px #00d9ff;
 }
 
+
+
 @media (max-width:1000px){
     #profil {
         flex-direction: column-reverse;
         justify-content: center;
-        margin: 0;
+        margin: 50px 0 0 0;
         padding: 0;
         gap: 0;
 
@@ -646,8 +670,8 @@ color: #00d9ff;
         display: flex;
     }
     #projets .cards .card {
-        width: 45%;
-        padding: 5px;
+        width: 48%;
+        padding: 0 5px;
     }
     #projets .cards .card img{
         width: 100%;
@@ -663,8 +687,21 @@ color: #00d9ff;
     
 }
 @media (max-width:850px){
+    #profil {
+        margin-top: 100px;
+    }
+    #profil .texte p {
+        font-size: 1.2rem;
+    }
+    #profil .texte h2 {
+        font-size: 1.7rem;
+        margin: 2px;
+    }
     #apropos .texte {
         width: 95%;
+    }
+    #apropos .texte p {
+        font-size: 1.2rem;
     }
     nav img {
         display: block;
@@ -692,27 +729,43 @@ color: #00d9ff;
     #menu-toggle:checked ~ ul {
         display: flex;
     }
+    #profil .texte {
+        width: 90%;
+    }
+    #projets .cards .card {
+        width: 70%;
+        padding: 0 5px;
+    }
+    #projets .cards .card img{
+        width: 100%;
+        height: 55%;
+    }
 }
 @media (max-width:650px) {
 
     #profil .profil img {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
         
     }
     #profil .texte h1 {
-        font-size: 3rem;
+        font-size: 2rem;
        
     }
     #profil .texte h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+    }
+    #profil .texte {
+        width: 90%;
+
     }
     #profil .texte .icon img {
     width: 20px;
     height: 20px;
     }
     #profil .texte .buttons button {
-    padding: 8px 15px;
+    margin-top: 15px;
+     padding: 8px 15px;
     font-size: 13px;
 
 
@@ -727,19 +780,27 @@ color: #00d9ff;
     #apropos .texte h2 {
         font-size: 1.6rem;
     }
+    #apropos .experience .cards {
+        gap: 10px;
+    }
+    
     #apropos .experience .cards .card h2 {
-        font-size: 25px;
+        font-size: 1.5rem;
     }
 
     #apropos .experience .cards .card p {
-        font-size: 12px;
+        font-size: 0.6rem;
     }
     #projets h2 {
         font-size: 1.6rem;
     }
     #projets .cards .card {
-        width: 45%;
-        min-height: 250px;
+        width: 90%;
+        padding: 0 5px;
+    }
+    #projets .cards .card img{
+        width: 100%;
+        height: 47%;
     }
     #projets .cards .card span {
         font-size: 0.9rem;
@@ -751,8 +812,8 @@ color: #00d9ff;
 }
 @media (max-width:450px) {
     #profil .profil img {
-        width: 200px;
-        height: 200px;
+        width: 170px;
+        height: 170px;
         
     }
     #profil .terminal {
@@ -760,6 +821,8 @@ color: #00d9ff;
         width: 250px;
         padding: 4px;
         height: 23px;
+        margin: 0;
+
     }
     #profil .terminal .cursor {
     display: inline-block;
@@ -792,7 +855,7 @@ color: #00d9ff;
         font-size: 0.8rem;
     }
     #apropos .experience .cards .card {
-        height: 50px;
+        height: 4.3rem;
         border-radius: 15px;
     }
     #apropos .experience .cards .card h2 {
@@ -800,7 +863,7 @@ color: #00d9ff;
         margin-bottom: 0;
     }
     #apropos .experience .cards .card p {
-        font-size: 8px;
+        font-size: .4rem;
     }
     #apropos .texte p {
         font-size: 13px;
@@ -821,8 +884,12 @@ color: #00d9ff;
         font-size: 1.6rem;
     }
     #projets .cards .card {
-        width: 90%;
-        min-height: 250px;
+        width: 95%;
+        height: 60%;
+    }
+    #projets .cards .card img {
+        width: 100%;
+        height: 10%;
     }
     #projets .cards .card span {
         font-size: 0.7rem;
