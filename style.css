@@ -41,9 +41,9 @@ h2 {
 nav {
     display: flex;
     width: 100%;
-    padding: 20px 60px 20px 40px;
+    padding: 1% 6% 0.5% 4%;
     background: transparent;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(1.5px);
     position: fixed;
     top: 0;
     z-index: 10;
@@ -135,7 +135,6 @@ li a:hover {
     width: 7px;
     height: 15px;
     background: #00d9ff;
-    animation: Curseur 1.1s step-end infinite;
 }
 
 #profil .texte h1 {
@@ -158,7 +157,6 @@ color: #00d9ff;
 #profil .texte h2 {
     margin-top: 0.8rem;
     font-size: 2.2rem;
-    color: #bfbfbf;
     font-weight: 600;
     opacity: 0;
     animation: fadeBottom 0.7s ease forwards;
@@ -168,21 +166,23 @@ color: #00d9ff;
     color: #00d9ff;
 }
 #profil .texte h2 span.typing {
+    color: white;
     display: inline-block;
     width: 0;
     overflow: hidden;
     white-space: nowrap;
     border-right: 3px solid #00d9ff;
     font-family: monospace;
-    animation: typing 5s steps(30, end) forwards,
+    animation: typing 6s steps(30, end) infinite,
         blink 0.8s step-end infinite;
+    animation-delay: 3s;
 }
 @keyframes typing {
     from {
         width: 0;
     }
     to {
-        width: 30ch;
+        width: 29ch;
     }
 }
 @keyframes blink {
@@ -382,9 +382,6 @@ color: #00d9ff;
 }
 #apropos .texte {
     width: 50%;
-    opacity: 0;
-    animation: fadeBottom 2s ease forwards;
-    animation-delay: .7s;
 }
 #apropos .texte span {
     color: #00d9ff;
@@ -394,8 +391,8 @@ color: #00d9ff;
     line-height: 40px;
     margin-bottom: 40px;
     opacity: 0;
-    animation: fadeTop 1s ease forwards;
-    animation-delay: 2s;
+    animation: fadeTop 0.7s ease forwards;
+    animation-delay: 1s;
 }
 #apropos .texte h2 span {
     text-shadow: 0 0 15px rgba(47, 181, 204, .6);
@@ -407,13 +404,16 @@ color: #00d9ff;
     line-height: 1.6;
     text-align: justify;
     color: #d8d8d8;
+    opacity: 0;
+    animation: fadeBottom .7s ease forwards;
+    animation-delay: 1.5s;
 }
 #apropos .texte p.terminal {
     color: #00d9ff;
     font-size: 1rem;
     opacity: 0;
-    animation: fadeLeft1 .5s ease forwards;
-    animation-delay: 4s;
+    animation: fadeLeft .7s ease forwards;
+    animation-delay: 0.6s;
 }
 #apropos .texte .name {
     margin-top: 35px;
@@ -426,7 +426,7 @@ color: #00d9ff;
     position: relative;  
     opacity: 0;
     animation: fadeRight .5s ease forwards;
-    animation-delay: 4s;
+    animation-delay: 2s;
 }
 #apropos .texte .name::after {
     content: "";
@@ -458,7 +458,7 @@ color: #00d9ff;
     transition: 1s;
     opacity: 0;
     animation: fadeRight 1s ease forwards;
-    animation-delay: 5s;
+    animation-delay: 2.5s;
 
 }
 #apropos .experience .card:hover {
@@ -472,13 +472,14 @@ color: #00d9ff;
     transform: scale(1.1);
 
 }
+
 #apropos .experience .card h2 {
     color: #00d9ff;
     font-size: 48px;
     margin-bottom: 12px;
     opacity: 0;
-    animation: fadeTop1 .5s ease forwards;
-    animation-delay: 7s;
+    animation: fadeTop1 .7s ease forwards;
+    animation-delay: 3s;
 }
 #apropos .experience .card p {
     color: #d9d9d9;
@@ -487,7 +488,7 @@ color: #00d9ff;
     font-size: 15px;
     opacity: 0;
     animation: fadeBottom .5s ease forwards;
-    animation-delay: 8s;
+    animation-delay: 3.5s;
 }
 
 #projets {
@@ -505,7 +506,7 @@ color: #00d9ff;
 #projets p.section {
     color: #a5b4c3;
     font-size: 18px;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 #projets .cards {
     display: flex;
@@ -514,10 +515,9 @@ color: #00d9ff;
     flex-wrap: wrap;
 }
 #projets .card {
-    width: 340px;
-    min-height: 400px;
-    padding: 10px;
-    border-radius: 25px;
+    width: 49%;
+    height: 85vh;
+    border-radius: 5%;
     background: rgba(255,255,255,.05);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, .08);
@@ -535,18 +535,16 @@ color: #00d9ff;
     padding: 0 20px;
 }
 #projets .card img {
-    width: 90px;
-    height: 90px;
+    width: 100%;
+    height: 60%;
     padding: 18px;
     background: #00d9ff20;
-    border-radius: 50%;
-    margin-bottom: 40px;
-    transition: .4s;   
+    margin-bottom: 20px;
+    transition: .4s; 
+    border-radius: 5%;
+
 }
-#projets .card:hover img {
-    transform: scale(1.1);
-    box-shadow: 0 0 35px #00d9ff;
-}
+
 #projets .card span:first-child {
     color: #00d9ff;
     font-size: 14px;
@@ -578,7 +576,12 @@ color: #00d9ff;
      border: 1px solid #00d9ff;
      font-size: 14px;
      font-weight: 600;
+     transition: 0.3s;
 
+}
+#projets  .card:hover span:last-child {
+    transform: scale(1);
+    box-shadow: 0 0 10px #00d9ff;
 }
 
 @media (max-width:1000px){
@@ -647,8 +650,8 @@ color: #00d9ff;
         padding: 5px;
     }
     #projets .cards .card img{
-        width: 70px;
-        height: 70px;
+        width: 100%;
+        height: 50%;
     }
     #projets .cards .card .texte h3 {
         font-size: 1.5rem;
@@ -747,7 +750,6 @@ color: #00d9ff;
 
 }
 @media (max-width:450px) {
-    
     #profil .profil img {
         width: 200px;
         height: 200px;
