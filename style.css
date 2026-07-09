@@ -30,6 +30,7 @@ html {scroll-behavior: smooth;}
 main {
     width: 100%;
 }
+
 h1,h2 {
     font-family: 'Space_Grotesk', sans-serif;
 }
@@ -512,8 +513,8 @@ color: #00d9ff;
 
 #projets {
     width: 100%;
-    height: 200vh;
-    margin-bottom: 200px;
+    min-height: 100vh;
+    height: auto;
     padding: 30px 5%;
     background-color: linear-gradient(180deg,#060b16,#0b1324,#05070d);
 }
@@ -529,19 +530,19 @@ color: #00d9ff;
     margin-bottom: 40px;
 }
 #projets .cards {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 49%);
+    gap: 2%;
+    
 }
 #projets .card {
-    width: 49%;
-    height: 85vh;
+    height: 85%;
     border-radius: 5%;
     background: rgba(255,255,255,.05);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, .08);
     transition: .45s;
+    padding-bottom: 1%;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 35px rgba(0,0,0,.4);
@@ -605,19 +606,21 @@ color: #00d9ff;
 }
 
 
-
 #contact {
     display: grid;
     grid-template-columns: repeat(2, 45%);
     justify-content: center;
     padding-top: 5%;
     gap: 3%;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    padding: 5% 5% 10% 5%;
+
 }
 #contact .texte {
     color: white;
 }
-#contact span {
+#contact .commentaire {
     color: #00d9ff;
     font-size: 1.2rem;
 }
@@ -625,13 +628,12 @@ color: #00d9ff;
     font-size: 2.5rem;
     margin-bottom: 5%;
 }
-#contact h2 span {
+#contact h2 div {
     color: #00d9ff;
-    font-size: 2.5rem;
 }
 
 #contact .texte p {
-    width: 90%;
+    width: 95%;
     display: block;
     font-size: 1.5rem;
     color: gray;
@@ -641,6 +643,7 @@ color: #00d9ff;
 }
 #contact .adresse {
     display: flex;
+
     margin-top: 3%;
 }
 #contact .adresse span {
@@ -677,7 +680,7 @@ color: #00d9ff;
 }
 #contact .message {
     width: 100%;
-    height: 85%;
+    height: 100%;
     margin-top: 10%;
     background: rgba(255,255,255,.04);
     border-radius: 5%;
@@ -806,17 +809,7 @@ color: #00d9ff;
     #apropos .experience .cards .card p {
         font-size: 13px;
     }
-    #projets .cards{
-        display: flex;
-    }
-    #projets .cards .card {
-        width: 48%;
-        padding: 0 5px;
-    }
-    #projets .cards .card img{
-        width: 100%;
-        height: 50%;
-    }
+    
     #projets .cards .card .texte h3 {
         font-size: 1.5rem;
     }
@@ -830,7 +823,7 @@ color: #00d9ff;
     #profil {
         margin-top: 100px;
     }
-    #profil .texte p {
+    #profil .texte p,{
         font-size: 1.2rem;
     }
     #profil .texte h2 {
@@ -873,12 +866,21 @@ color: #00d9ff;
         width: 90%;
     }
     #projets .cards .card {
-        width: 70%;
+        width: 100%;
+        height: 90vh;
         padding: 0 5px;
     }
     #projets .cards .card img{
         width: 100%;
-        height: 55%;
+        height: 45%;
+    }
+    #contact {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #contact .texte p,#contact .texte span,#contact .adresse p,
+    #contact .adresse span,#contact .message p,#contact .message span{
+        font-size: 1rem;
     }
 }
 @media (max-width:650px) {
@@ -931,12 +933,17 @@ color: #00d9ff;
     #apropos .experience .cards .card p {
         font-size: 0.6rem;
     }
-    #projets h2 {
+    #projets h2 ,#contact h2{
         font-size: 1.6rem;
     }
+    #projets .cards {
+        display: grid;
+        grid-template-columns: repeat(1, 98%);
+        gap: 0;
+    }
     #projets .cards .card {
-        width: 90%;
         padding: 0 5px;
+        height: 90%;
     }
     #projets .cards .card img{
         width: 100%;
@@ -1022,14 +1029,6 @@ color: #00d9ff;
     }
     #projets h2 {
         font-size: 1.6rem;
-    }
-    #projets .cards .card {
-        width: 95%;
-        height: 60%;
-    }
-    #projets .cards .card img {
-        width: 100%;
-        height: 10%;
     }
     #projets .cards .card span {
         font-size: 0.7rem;
