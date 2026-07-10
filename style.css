@@ -44,7 +44,7 @@ nav {
     width: 100%;
     padding: 1% 6% 0.5% 4%;
     background: transparent;
-    backdrop-filter: blur(1.5px);
+    backdrop-filter: blur(3px);
     position: fixed;
     top: 0;
     z-index: 10;
@@ -140,7 +140,7 @@ li a:hover {
 
 #profil .texte h1 {
     margin-top: 1rem;
-    font-size: 4.3rem;
+    font-size: 3.5rem;
     font-family: 'Space_Grotesk', sans-serif;
     line-height: 1;
     letter-spacing: 0.5px;
@@ -158,7 +158,7 @@ color: #00d9ff;
 #profil .texte h2 {
     margin-top: 0.8rem;
     margin-bottom: 0;
-    font-size: 2.6rem;
+    font-size: 2rem;
     font-weight: 600;
     opacity: 0;
     animation: fadeBottom 0.7s ease forwards;
@@ -178,19 +178,6 @@ color: #00d9ff;
     animation: typing 6s steps(30, end) infinite,
         blink 0.8s step-end infinite;
     animation-delay: 3s;
-}
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 29ch;
-    }
-}
-@keyframes blink {
-    50%{
-        border-color: transparent;
-    }
 }
 
 #profil .texte p {
@@ -289,23 +276,13 @@ color: #00d9ff;
     box-shadow: linear-gradient(90deg, #00d9ff, white);
     animation: battement 2.3s ease-in-out infinite;
 }
-@keyframes battement {
-    0%{
-        box-shadow: 0 0 15px #00e5ff;
-    }
-    50%{
-        box-shadow: 0 0 40px #00e5ff;
-    }
-    100%{
-        box-shadow: 0 0 15px #00e5ff;
-    }
-}
+
 #profil .profil img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 490px;
-    height: 490px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
@@ -367,7 +344,30 @@ color: #00d9ff;
 @keyframes Curseur{
     50%{opacity: 0;}
 }
-
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 29ch;
+    }
+}
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }
+}
+@keyframes battement {
+    0%{
+        box-shadow: 0 0 15px #00e5ff;
+    }
+    50%{
+        box-shadow: 0 0 40px #00e5ff;
+    }
+    100%{
+        box-shadow: 0 0 15px #00e5ff;
+    }
+}
 #apropos {
     width: 100%;
     min-height: 100vh;
@@ -531,25 +531,25 @@ color: #00d9ff;
 }
 #projets .cards {
     display: grid;
-    grid-template-columns: repeat(2, 49%);
-    gap: 2%;
-    
+    grid-template-columns: repeat(2, 45%);
+    justify-content: center;
+    gap: 2%;    
 }
 #projets .card {
-    height: 85%;
+    height: 80vh;
     border-radius: 5%;
     background: rgba(255,255,255,.05);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, .08);
     transition: .45s;
-    padding-bottom: 1%;
+    padding-bottom: 10%;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 35px rgba(0,0,0,.4);
 }
 #projets .card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 25px 60px rgba(0, 217, 255, .25);
+    box-shadow: 0 0 10px rgba(0, 217, 255, .25);
     border: 1px solid #00d9ff;
 }
 #projets .card .texte {
@@ -557,10 +557,10 @@ color: #00d9ff;
 }
 #projets .card img {
     width: 100%;
-    height: 60%;
+    height: 65%;
     padding: 18px;
     background: #00d9ff20;
-    border-radius: 5%;
+    border-radius: 5% 5% 0 0;
     margin-bottom: 20px;
     transition: .4s; 
 
@@ -588,6 +588,18 @@ color: #00d9ff;
     font-size: 17px;
 
 }
+#projets .card .texte img {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin-right: 10px;
+    background: none;
+}
+#projets .card:hover .texte img {
+    transform: scale(1.1)
+                translateY(-1%);
+}
+
 #projets  .card span:last-child {
     display: inline-block;
     padding: 8px 16px;
@@ -608,10 +620,10 @@ color: #00d9ff;
 
 #contact {
     display: grid;
-    grid-template-columns: repeat(2, 45%);
+    grid-template-columns: repeat(2, 50%);
     justify-content: center;
     padding-top: 5%;
-    gap: 3%;
+    gap: 1%;
     min-height: 100vh;
     height: auto;
     padding: 5% 5% 10% 5%;
@@ -635,7 +647,7 @@ color: #00d9ff;
 #contact .texte p {
     width: 95%;
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: gray;
 }
 #contact .adresses {
@@ -664,14 +676,14 @@ color: #00d9ff;
 }
 #contact .adresses .icon img {
     margin-top: 5%;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     padding: 0;
     transition: .5s;
 }
-#contact .adresses .icon span img {
-    background: #0ef;
+#contact .adresses .icon a {
+    text-decoration: none;
 }
 #contact .adresses .icon img:hover {
     transform: scale(1.1)
@@ -685,16 +697,18 @@ color: #00d9ff;
     background: rgba(255,255,255,.04);
     border-radius: 5%;
     border: 1px solid #00d9ff;
-    padding: 5% 5%;
+    padding: 5% 5% 10% 5%;
     color: white;
     transition: .5s;
 }
 #contact .message p {
+    font-size: 1rem;
     padding: 0 0 1% 0;
 }
+
 #contact .message:hover {
     border: 1px solid #00d9ff;
-    box-shadow: 0 0 10px #00d9ff;
+    box-shadow: 0 0 5px #00d9ff;
 }
 #contact .message input:hover,#contact .message textarea:hover {
     border: 1px solid #00d9ff;
@@ -702,7 +716,7 @@ color: #00d9ff;
 }
 #contact input {
     width: 100%;
-    height: 8%;
+    height: 10%;
     color: white;
     padding-left: 1rem;
     margin-bottom: 20px;
@@ -729,7 +743,7 @@ color: #00d9ff;
     width: 100%;
     padding: 15px 35px ;
     margin-top: 5%;
-    background: linear-gradient(90deg, white, #00d9ff);
+    background:  #00d9ff;
     border-radius: 10px;
     border: none;
     font-size: 1.1rem;
@@ -737,18 +751,55 @@ color: #00d9ff;
     transition: 1s;
 }
 #contact .message button:hover {
-    background: linear-gradient(90deg, #00d9ff, white);
+    background:  white;
     transform: scale(1.02)
                 translateY(-5px);
     box-shadow: 0 0 5px #00d9ff;
 
 }
+
 #contact .message span {
     margin-top: 30px;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     display: block;
     text-align: center;
     color: gray;
+}
+@media (max-width:1500px) {
+    #profil .profil img {
+        width: 420px;
+        height: 420px;     
+    }
+    
+    #apropos .experience .cards .card {
+        height: 12vh;
+    }
+    #apropos .experience .cards .card h2 {
+        font-size: 23px;
+    }
+    #apropos .experience .cards .card p {
+        font-size: 13px;
+    }
+    #projets .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+    }
+    #projets .cards .card {
+        height: 40vh;
+    }
+    #projets .cards .card img {
+        height: 55%;
+    }
+    #projets .cards .card .texte h3 {
+        font-size: 1.5rem;
+    }
+    
+    #contact {
+        margin-top: 10%;
+    }
+    #contact .message {
+        height: 70vh;
+    }
 }
 
 @media (max-width:1000px){
@@ -809,21 +860,56 @@ color: #00d9ff;
     #apropos .experience .cards .card p {
         font-size: 13px;
     }
-    
+    #projets .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+    }
+    #projets .cards .card {
+        height: 40vh;
+    }
+    #projets .cards .card img {
+        height: 55%;
+    }
     #projets .cards .card .texte h3 {
         font-size: 1.5rem;
+    }
+    #projets .cards .card .texte img {
+        width: 25px;
+        height: 25px;
     }
     #projets .cards .card .texte p {
         font-size: 1rem;
     }
-
-    
+    #contact {
+        margin-top: 10%;
+    }
+    #contact .texte p,#contact .texte span {
+        font-size: 1.2rem;
+    }
+    #contact .texte img {
+        width: 40px;
+        height: 43px;
+        padding: 9px;
+    }
+    #contact .texte .icon img {
+        width: 28px;
+        height: 28px;
+    }
+    #contact .message {
+        height: 65vh;
+    }
+     #contact .message p {
+        font-size: 0.8rem;
+     }
+    #contact .message button {
+        padding: 7px ;
+    }  
 }
 @media (max-width:850px){
     #profil {
         margin-top: 100px;
     }
-    #profil .texte p,{
+    #profil .texte p{
         font-size: 1.2rem;
     }
     #profil .texte h2 {
@@ -865,14 +951,22 @@ color: #00d9ff;
     #profil .texte {
         width: 90%;
     }
-    #projets .cards .card {
-        width: 100%;
-        height: 90vh;
-        padding: 0 5px;
+    #projets .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
     }
-    #projets .cards .card img{
-        width: 100%;
+    #projets .cards .card {
+        height: 46vh;
+    }
+    #projets .cards .card .texte p{
+        line-height: 20px;
+    }
+    #projets .cards .card img {
         height: 45%;
+    }
+    #projets .cards .card .texte img {
+        width: 20px;
+        height: 20px;
     }
     #contact {
         display: flex;
@@ -881,6 +975,9 @@ color: #00d9ff;
     #contact .texte p,#contact .texte span,#contact .adresse p,
     #contact .adresse span,#contact .message p,#contact .message span{
         font-size: 1rem;
+    }
+     #contact .message {
+        height: 70vh;
     }
 }
 @media (max-width:650px) {
@@ -956,6 +1053,32 @@ color: #00d9ff;
         font-size: 1.2rem;
     }
 
+    #contact .texte p,#contact .texte span {
+        font-size: 0.9rem;
+    }
+    #contact .texte img {
+        width: 40px;
+        height: 43px;
+        padding: 9px;
+    }
+    #contact .texte .icon img {
+        width: 20px;
+        height: 20px;
+    }
+    #contact .message {
+        height: 60vh;
+    }
+
+     #contact .message p {
+        font-size: 0.7rem;
+     }
+    #contact .message button {
+        padding: 7px ;
+        font-size: 0.9rem;
+    }
+    #contact .message span {
+        font-size: 0.6rem;
+     }
 }
 @media (max-width:450px) {
     #profil .profil img {
@@ -1039,5 +1162,8 @@ color: #00d9ff;
     #projets .cards .card .texte p {
         font-size: 12px;
         line-height: 1rem;
+    }
+    #contact .message {
+        height: 55vh;
     }
 }
