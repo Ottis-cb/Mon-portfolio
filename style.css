@@ -209,9 +209,9 @@ color: #00d9ff;
     border-radius: 50%;
 }
 #profil .texte .icon img:hover {
-    transform: scale(1.2)
-    translateY(-5px);
-    box-shadow: 0 1px 10px #0ef;
+    transform: rotate(360deg)
+                scale(1.2);
+    box-shadow: 0 1px 10px white;
 }
 #profil .texte .buttons {
     display: flex;
@@ -370,15 +370,115 @@ color: #00d9ff;
 }
 #apropos {
     width: 100%;
-    min-height: 100vh;
-    height: auto;
+    height: 100vh;
     color: white;
+    padding: 2% 5%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 80px;
-    padding: 30px 5%;
+    justify-content: center;
+    background: rgba(255,255,255,.05);
 }
+#apropos h2 {
+    margin-bottom:  2%;
+}
+#apropos h2 span {
+    color: #00d9ff;
+}
+#apropos .about {
+    display: flex;
+    gap: 8%;
+    justify-content: center;
+    margin-top: 5%;
+
+}
+#apropos .about .info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+#apropos .about .info .texte h2::after {
+    content: '';
+    display: block;
+    width: 12%;
+    height: 3px;
+    background: #00d9ff;
+}
+#apropos .about .info .texte p {
+    color: gray;
+}
+#apropos .about .info .infos {
+    display: flex;
+    padding: 4% 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2%;
+}
+#apropos .about .info .infos img {
+    width: 3vw;
+    height: 4vh;
+}
+#apropos .about .info .infos .perso {
+    display: flex;
+    background: #05070d;
+    padding: 1.2%;
+    border-radius: 10px;
+    gap: 2%;
+    width: 45vw;
+}
+#apropos .about .info .infos span {
+    color: gray;
+}
+#apropos .profil {
+    width: 360px;
+    height: 360px;
+    background: linear-gradient(90deg, #00d9ff, white);
+    border-radius: 1%;
+    animation: battement 2s ease-in-out infinite;
+
+}
+#apropos .about .icons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+#apropos .about .icon {
+    display: flex;
+    gap: 5%;
+    align-items: center;
+}
+#apropos .about .icon img {
+    width: 2.5vw;
+    height: 4.5vh;
+    transition: 0.5s;
+    border-radius: 50%;
+}
+#apropos .about .icon img:hover {
+    transform: rotate(360deg)
+                scale(1.2);
+    box-shadow: 0 1px 10px #00d9ff;
+}
+#apropos .about .info .buttons {
+    width: 100%;
+}
+#apropos .about .info button {
+    padding: 2% 5%;
+    background: #00d9ff;
+    border-radius: 15px;
+    border: none;
+    transition: 0.5s;
+    box-shadow: 0 0 5px #00d9ff;
+    font-weight: bold;
+}
+#apropos .about .info button:hover {
+    transform: scale(1.1);
+    background: white;
+    color: #00d9ff;
+}
+
+/*
+
 #apropos .texte {
     width: 50%;
 }
@@ -509,7 +609,7 @@ color: #00d9ff;
 }
 #apropos .experience .card:hover p {
     color: white;
-}
+}*/
 
 #projets {
     width: 100%;
@@ -686,8 +786,8 @@ color: #00d9ff;
     text-decoration: none;
 }
 #contact .adresses .icon img:hover {
-    transform: scale(1.1)
-                translateY(-10px);
+    transform: rotate(360deg)
+                scale(1.2);;
     box-shadow: 0 0 10px white;
 }
 #contact .message {
@@ -767,10 +867,15 @@ color: #00d9ff;
 }
 @media (max-width:1500px) {
     #profil .profil img {
-        width: 420px;
-        height: 420px;     
+        width: 400px;
+        height: 400px;     
     }
-    
+    #profil .texte h1 {
+        font-size: 2.8rem;
+    }
+    #profil .texte p {
+        font-size: 1.4rem;
+    }
     #apropos .experience .cards .card {
         height: 12vh;
     }
@@ -785,10 +890,10 @@ color: #00d9ff;
         grid-template-columns: repeat(2, 48%);
     }
     #projets .cards .card {
-        height: 40vh;
+        height: 70vh;
     }
     #projets .cards .card img {
-        height: 55%;
+        height: 60%;
     }
     #projets .cards .card .texte h3 {
         font-size: 1.5rem;
@@ -799,6 +904,10 @@ color: #00d9ff;
     }
     #contact .message {
         height: 70vh;
+    }
+    #apropos .about .profil {
+        width: 380px;
+        height: 380px;
     }
 }
 
@@ -812,27 +921,41 @@ color: #00d9ff;
 
     }
     #profil .profil img {
-        width: 350px;
-        height: 350px;
-        
+        width: 300px;
+        height: 300px;        
     }
     #profil .texte .terminals {
         display: flex;
         justify-content: center;
+        margin-top: 1%;
+
     }
     #profil .texte {
         text-align: center;
+
     }
     #profil .texte h1 {
         font-size: 3rem;
+        margin-top: 1%;
     }
+    #profil .texte h2 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
     #profil .icons{
         display: flex;
         justify-content: center;
         align-items: center;
     }
+    #profil .texte .icon {
+        margin: 1%;
+    }
     #profil .buttons {
         justify-content: center;
+    }
+    #profil .texte .buttons button {
+        margin-top: 0;
     }
 
     #apropos {
@@ -862,10 +985,10 @@ color: #00d9ff;
     }
     #projets .cards {
         display: grid;
-        grid-template-columns: repeat(2, 48%);
+        grid-template-columns: repeat(2, 49%);
     }
     #projets .cards .card {
-        height: 40vh;
+        height: 60vh;
     }
     #projets .cards .card img {
         height: 55%;
@@ -904,6 +1027,13 @@ color: #00d9ff;
     #contact .message button {
         padding: 7px ;
     }  
+    #apropos .about span {
+        margin-bottom: 100px;
+    }
+    #apropos .profil {
+        width: 280px;
+        height: 280px;
+    }
 }
 @media (max-width:850px){
     #profil {
@@ -914,7 +1044,7 @@ color: #00d9ff;
     }
     #profil .texte h2 {
         font-size: 1.7rem;
-        margin: 2px;
+        margin: 0;
     }
     #apropos .texte {
         width: 95%;
@@ -956,13 +1086,13 @@ color: #00d9ff;
         grid-template-columns: repeat(2, 50%);
     }
     #projets .cards .card {
-        height: 46vh;
+        height: 52vh;
     }
     #projets .cards .card .texte p{
         line-height: 20px;
     }
     #projets .cards .card img {
-        height: 45%;
+        height: 52%;
     }
     #projets .cards .card .texte img {
         width: 20px;
@@ -1035,7 +1165,7 @@ color: #00d9ff;
     }
     #projets .cards {
         display: grid;
-        grid-template-columns: repeat(1, 98%);
+        grid-template-columns: repeat(1, 80%);
         gap: 0;
     }
     #projets .cards .card {
@@ -1044,7 +1174,7 @@ color: #00d9ff;
     }
     #projets .cards .card img{
         width: 100%;
-        height: 47%;
+        height: 49%;
     }
     #projets .cards .card span {
         font-size: 0.9rem;
@@ -1119,6 +1249,7 @@ color: #00d9ff;
     #profil .texte .buttons button {
     padding: 4px 7px;
     font-size: 10px;
+    margin-top: 1%;
 
     }
     #apropos .texte p.terminal {
@@ -1152,6 +1283,19 @@ color: #00d9ff;
     }
     #projets h2 {
         font-size: 1.6rem;
+    }
+    #projets .cards {
+        display: grid;
+        grid-template-columns: repeat(1, 80%);
+        gap: 0;
+    }
+    #projets .cards .card {
+        padding: 0 5px;
+        height: 95%;
+    }
+    #projets .cards .card img{
+        width: 100%;
+        height: 45%;
     }
     #projets .cards .card span {
         font-size: 0.7rem;
