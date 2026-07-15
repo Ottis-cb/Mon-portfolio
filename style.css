@@ -7,6 +7,7 @@ body {
 width: 100%;
 background: #05070d;
 font-family: 'Inter', sans-serif;
+margin: 0 auto;
 }
 html::-webkit-scrollbar {
     width: 12px;
@@ -411,7 +412,6 @@ color: #00d9ff;
     width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     font-size: 1.3rem;
 }
 #apropos .about .info .texte h2 {
@@ -463,8 +463,9 @@ color: #00d9ff;
     color: gray;
 }
 #apropos .profil {
-    width: 360px;
-    height: 360px;
+    margin-top: 4%;
+    width: 340px;
+    height: 340px;
     background: linear-gradient(90deg, #00d9ff, white);
     border-radius: 15px;
     animation: levitation 5s ease-in-out infinite;
@@ -520,140 +521,6 @@ color: #00d9ff;
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(0,229,255,.5);
 }
-
-/*
-
-#apropos .texte {
-    width: 50%;
-}
-#apropos .texte span {
-    color: #00d9ff;
-}
-#apropos .texte h2 {
-    font-size: 35px;
-    line-height: 40px;
-    margin-bottom: 40px;
-    opacity: 0;
-    animation: fadeTop 0.7s ease forwards;
-    animation-delay: 1s;
-}
-#apropos .texte h2 span {
-    text-shadow: 0 0 15px rgba(47, 181, 204, .6);
-
-}
-
-#apropos .texte p {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    text-align: justify;
-    color: #d8d8d8;
-    opacity: 0;
-    animation: fadeBottom .7s ease forwards;
-    animation-delay: 1.5s;
-}
-#apropos .texte p.terminal {
-    color: #00d9ff;
-    font-size: 1rem;
-    opacity: 0;
-    animation: fadeLeft .7s ease forwards;
-    animation-delay: 0.6s;
-}
-#apropos .texte .name {
-    margin-top: 35px;
-    color: #00d9ff;
-    font-size: 28px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: inline-block;
-    position: relative;  
-    opacity: 0;
-    animation: fadeRight .5s ease forwards;
-    animation-delay: 2s;
-}
-#apropos .texte .name::after {
-    content: "";
-    width: 90px;
-    height: 3px;
-    background: #00d9ff;
-    display: block;
-    margin-top: 8px;
-}
-#apropos .experience {
-    width: 50%;
-}
-
-#apropos .experience .cards{
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    gap: 25px;
-    
-}
-#apropos .experience .card {
-    height: 190px;
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, .08);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-position: center;
-    transition: 1s;
-    opacity: 0;
-    animation: fadeRight 1s ease forwards;
-    animation-delay: 2.5s;
-}
-#apropos .experience .card:hover {
-    transform: translateY(-10px) scale(1.03);
-    background: #152238;
-    box-shadow: 0 0 30px rgba(27, 181, 204, .7);
-}
-
-#apropos .experience .c1 {
-    background: url(/Image&icon/840a4c1aeb714bd362894b25ab94316b.jpg);
-    background-position: right;
-}
-#apropos .experience .c2 {
-    background: url(/Image&icon/840a4c1aeb714bd362894b25ab94316b.jpg);
-    background-position: left;
-}
-#apropos .experience .c4 {
-    background: url(/Image&icon/840a4c1aeb714bd362894b25ab94316b.jpg);
-    background-position: top;
-}
-
-#apropos .experience .c3 {
-    background: url(/Image&icon/840a4c1aeb714bd362894b25ab94316b.jpg);
-    background-position: bottom;
-
-}
-#apropos .experience .card:hover h2 {
-    text-shadow: 0 1px 30px #00d9ff;
-    transition: 1s;
-    transform: scale(1.1);
-
-}
-
-#apropos .experience .card h2 {
-    color: #00d9ff;
-    font-size: 48px;
-    margin-bottom: 12px;
-    opacity: 0;
-    animation: fadeTop1 .7s ease forwards;
-    animation-delay: 3s;
-}
-#apropos .experience .card p {
-    color: #06041a;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 15px;
-    opacity: 0;
-    animation: fadeBottom .5s ease forwards;
-    animation-delay: 3.5s;
-}
-#apropos .experience .card:hover p {
-    color: white;
-}*/
 
 #projets {
     width: 100%;
@@ -782,27 +649,32 @@ color: #00d9ff;
     color: #00d9ff;
     font-size: 1.2rem;
 }
-#contact h2 {
+#contact .texte h2 {
+    width: 90%;
     font-size: 2.5rem;
     margin-bottom: 5%;
 }
-#contact h2 div {
+#contact h2 .blue {
     color: #00d9ff;
+    display: inline;
 }
 
 #contact .texte p {
     width: 95%;
     display: block;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: gray;
 }
 #contact .adresses {
-    margin-top: 7%;
+    margin-top: 5%;
 }
 #contact .adresse {
     display: flex;
-
-    margin-top: 3%;
+    background: rgba(255,255,255,.05);
+    margin-top: 2%;
+    padding: 2%;
+    width: 90%;
+    border-radius: 15px;
 }
 #contact .adresse span {
     color: gray;
@@ -838,7 +710,7 @@ color: #00d9ff;
 }
 #contact .message {
     width: 100%;
-    height: 100%;
+    height: 90%;
     margin-top: 10%;
     background: rgba(255,255,255,.04);
     border-radius: 5%;
@@ -862,7 +734,7 @@ color: #00d9ff;
 }
 #contact input {
     width: 100%;
-    height: 10%;
+    height: 12%;
     color: white;
     padding-left: 1rem;
     margin-bottom: 20px;
@@ -1009,6 +881,11 @@ color: #00d9ff;
         flex-direction: column;
         gap: 40px;
     }
+     #apropos .about .profil {
+        margin-top: 5%;
+        width: 280px;
+        height: 280px;
+     }
     #apropos .texte {
         width: 95%;
     }
@@ -1091,6 +968,20 @@ color: #00d9ff;
     #profil .texte h2 {
         font-size: 1.7rem;
         margin: 0;
+    }
+    #apropos {
+        
+    }
+    #apropos .about {
+        flex-wrap: wrap;
+    }
+    #apropos .about .info {
+        justify-content: start;
+    }
+    #apropos .about .info .infos {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+
     }
     #apropos .texte {
         width: 95%;
