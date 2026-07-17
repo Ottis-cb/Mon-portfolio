@@ -219,8 +219,8 @@ color: #00d9ff;
     animation-delay: 1.8s;
 }
 #profil .texte .icon img {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     transition: 0.5s;
     border: 1px solid #0ef;
     border-radius: 50%;
@@ -408,6 +408,25 @@ color: #00d9ff;
     align-items: center;
 
 }
+#apropos .about .image {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+#apropos .about .image span {
+    position: relative;
+    top: 0;
+}
+#apropos .about .image img {
+    width: 400px;
+    height: 400px;
+    border: 2px solid rgba(0, 217, 255, .3);
+    border-radius: 15px;
+    animation: levitation 5s ease-in-out infinite;
+    background: linear-gradient(90deg, #00d9ff, white);
+    margin-bottom: 10px;
+}
 #apropos .about .info {
     width: 75%;
     background: rgba(255,255,255,.04);
@@ -422,12 +441,13 @@ color: #00d9ff;
 #apropos .about .info .texte p {
     color: gray;
 }
+
 #apropos .about .info .infos {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    padding: 4% 0;
     gap: 2%;
+    margin: 4% 0;
 
 }
 #apropos .about .info .infos img {
@@ -442,7 +462,7 @@ color: #00d9ff;
 
 #apropos .about .info .infos .perso {
     display: flex;
-    background: rgba(2555, 255, 255, .03);
+    background: rgba(255, 255, 255, .03);
     backdrop-filter: blur(15px);
     padding: 3% 1.2%;
     border-radius: 12px;
@@ -459,14 +479,6 @@ color: #00d9ff;
     
 }
 
-#apropos .profil {
-    width: 400px;
-    height: 400px;
-    border: 2px solid rgba(0, 217, 255, .3);
-    border-radius: 15px;
-    animation: levitation 5s ease-in-out infinite;
-    background: linear-gradient(90deg, #00d9ff, white);
-}
 @keyframes levitation {
     0% ,100%{
         transform: translateY(0);
@@ -519,8 +531,7 @@ color: #00d9ff;
 }
 #apropos .apropos .experience {
     display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    margin-top: 20px;
     background: rgba(255,255,255,.04);
     padding: .7% 3%;
     border-radius: 20px;
@@ -531,7 +542,11 @@ color: #00d9ff;
     width: 100%;
     align-items: center;
     gap: 8%;
-
+}
+#apropos .apropos .experience:hover .exp img {
+    box-shadow: 0 0 10px #00d9ff;
+    transform: scale(1.07)
+    rotate(360deg);
 }
 #apropos .apropos .experience .exp img {
     width: 45px;
@@ -539,13 +554,15 @@ color: #00d9ff;
     padding: 10px;
     border-radius: 50%;
     border: 1px solid #00d9ff;
+    transition: .5s;
 }
 #projets {
     width: 100%;
     min-height: 100vh;
     height: auto;
-    padding: 30px 5%;
-    background-color: linear-gradient(180deg,#060b16,#0b1324,#05070d);
+    padding: 2% 5% 5%;
+    background: linear-gradient(180deg,#060b16,#0b1324,#05070d);
+    padding-top: 70px;
 }
 #projets h2 {
     color: #fff;
@@ -553,112 +570,118 @@ color: #00d9ff;
 #projets h2 span {
     color: #00d9ff;
 }
-#projets p.section {
-    color: #a5b4c3;
-    font-size: 18px;
-    margin-bottom: 40px;
-}
+
 #projets .cards {
     display: grid;
-    grid-template-columns: repeat(2, 45%);
+    grid-template-columns: repeat(2, 50%);
     justify-content: center;
     gap: 2%;    
 }
 #projets .card {
-    height: 80vh;
-    border-radius: 5%;
+    height: 550px;
+    border-radius: 25px;
     background: rgba(255,255,255,.05);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, .08);
     transition: .45s;
-    padding-bottom: 10%;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 35px rgba(0,0,0,.4);
 }
+
+#projets .card::before  {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px ;
+    background: rgba(0, 217, 255, .08);
+    border-radius: 50%;
+    top: -120px;
+    right: -120px;
+    filter: blur(50px);
+}
+
 #projets .card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 0 10px rgba(0, 217, 255, .25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .5),
+    0 0 25px rgba(0, 217, 255, .3);
     border: 1px solid #00d9ff;
 }
+#projets .card:hover > img {
+    transform: scale(1.05);
+}
+
 #projets .card .texte {
-    padding: 0 20px;
+    padding: 10px 20px;
+}
+#projets .card .texte img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 15px;
+    background: none;
 }
 #projets .card img {
     width: 100%;
-    height: 65%;
-    padding: 18px;
-    background: #00d9ff20;
+    height: 60%;
     border-radius: 5% 5% 0 0;
     margin-bottom: 20px;
     transition: .4s; 
 
 }
 
+
 #projets .card span:first-child {
-    color: #00d9ff;
+    color: #b6c2d1;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 1px;
     
 }
 
-
 #projets .texte h3 {
     color: white;
-    margin: 18px 0;
-    font-size: 30px;
+    margin: 10px 0;
+    font-size: 25px;
     font-weight: 700;
 }
+
 #projets .card p {
     color: #b6c2d1;
-    line-height: 1.8;
-    margin-bottom: 30px;
+    line-height: 1.5;
+    margin-bottom: 10px;
     font-size: 17px;
 
 }
-#projets .card .texte img {
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    margin-right: 10px;
-    background: none;
-}
+
+
 #projets .card:hover .texte img {
     transform: scale(1.1)
                 translateY(-1%);
 }
 
-#projets  .card span:last-child {
-    display: inline-block;
-    padding: 8px 16px;
-    background: #00d9ff20;
-    color: #00d9ff;
-    border-radius: 20px;
-     border: 1px solid #00d9ff;
-     font-size: 14px;
-     font-weight: 600;
-     transition: 0.3s;
-
-}
-#projets  .card:hover span:last-child {
-    transform: scale(1);
-    box-shadow: 0 0 10px #00d9ff;
-}
-
-
 #contact {
+    position: relative;
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     justify-content: center;
     padding-top: 5%;
-    gap: 1%;
     min-height: 100vh;
     height: auto;
-    padding: 5% 5% 10% 5%;
+    padding: 5% 3% 10% 3%;
     background: radial-gradient(circle at top left , #00d9ff20, transparent 40%), #05070d;
-
-
+}
+#contact::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #00d9ff;
+    filter: blur(180px);
+    opacity: .08;
+    top: -150px;
+    left: -150px;
 }
 #contact .texte {
     color: white;
@@ -693,6 +716,17 @@ color: #00d9ff;
     padding: 2%;
     width: 90%;
     border-radius: 15px;
+    cursor: pointer;
+    transition: .4s;
+}
+#contact .adresse:hover {
+    transform: translateX(10px);
+    background-color: rgba(0, 217, 255, .08);
+    border-left: 4px solid #00d9ff;
+}
+#contact .adresses .adresse:hover img {
+    transform: rotate(-8deg)
+    scale(1.1);
 }
 #contact .adresse span {
     color: gray;
@@ -703,17 +737,21 @@ color: #00d9ff;
     display: block;
     color: white;
 }
+
 #contact .adresses img {
     width: 45px;
     height: 45px;
+    border-radius: 12px;
+    background: rgba(0, 217, 255, .08);
+    transition: .4s;
     margin-right: 20px;
-    background: rgba(255,255,255,.05);
     padding: 8px;
 }
+
 #contact .adresses .icon img {
     margin-top: 5%;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     padding: 0;
     transition: .5s;
@@ -730,9 +768,10 @@ color: #00d9ff;
     width: 100%;
     height: 90%;
     margin-top: 10%;
-    background: rgba(255,255,255,.04);
+    background: rgba(20,25,35,.65);
+    backdrop-filter: blur(15px);
     border-radius: 5%;
-    border: 1px solid #00d9ff;
+    border: 1px solid rgba(0, 217, 255, .3);
     padding: 5% 5% 10% 5%;
     color: white;
     transition: .5s;
@@ -743,54 +782,63 @@ color: #00d9ff;
 }
 
 #contact .message:hover {
-    border: 1px solid #00d9ff;
     box-shadow: 0 0 5px #00d9ff;
+}
+
+#contact input,
+#contact textarea {
+    border: 1px solid transparent;
+    transition: .35s;
+    font-size: 1rem;
+    width: 100%;
+    color: white;
+    background: rgba(255,255,255,.05);
+
 }
 #contact .message input:hover,#contact .message textarea:hover {
     border: 1px solid #00d9ff;
-
+}
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: #888;
+}
+#contact input:focus,
+#contact textarea:focus {
+    outline: none;
+    border-color: #00d9ff;
+    box-shadow: 0 0 15px rgba(0, 217, 255, .3);
+    transform: translateY(-2px);
 }
 #contact input {
-    width: 100%;
     height: 12%;
-    color: white;
     padding-left: 1rem;
     margin-bottom: 20px;
     border-radius: 5px;
-    background: rgba(255,255,255,.05);
-    border: none;
-    transition: .5s;
-
 }
 #contact textarea {
-    width: 100%;
     height: 30%;
     padding: 1rem;
     border-radius: 10px;
     display: block;
-    background: rgba(255,255,255,.05);
-    color: white;
-    border: none;
-    transition: .5s;
-
 }
 #contact .message button {
     text-align: center;
     width: 100%;
     padding: 15px 35px ;
     margin-top: 5%;
-    background:  #00d9ff;
+    background:  linear-gradient(90deg, #00d9ff, #008cff);
+    color: white;
+    letter-spacing: 1px;
     border-radius: 10px;
     border: none;
     font-size: 1.1rem;
     font-weight: bold;
-    transition: 1s;
+    transition: .5s;
 }
 #contact .message button:hover {
-    background:  white;
     transform: scale(1.02)
                 translateY(-5px);
-    box-shadow: 0 0 5px #00d9ff;
+    box-shadow: 0 0 20px rgba(0, 217, 255, .3);
 
 }
 
