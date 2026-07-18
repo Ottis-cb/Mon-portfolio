@@ -387,7 +387,8 @@ color: #00d9ff;
 }
 #apropos {
     width: 100%;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     color: white;
     padding: 2% 4%;
     display: flex;
@@ -451,8 +452,8 @@ color: #00d9ff;
 
 }
 #apropos .about .info .infos img {
-    width: 4vw;
-    height: 4vh;
+    width: 35px;
+    height: 35px;
     transition: .3s;
     
 }
@@ -573,7 +574,7 @@ color: #00d9ff;
 
 #projets .cards {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     gap: 2%;    
 }
@@ -660,11 +661,144 @@ color: #00d9ff;
                 translateY(-1%);
 }
 
+
+
+#competences {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    padding: 3% 5% 0 5%;
+    color: white;
+    background: radial-gradient(circle at top left , #00d9ff20, transparent 40%), #05070d;
+}
+#competences .terminal {
+    color: #00d9ff;
+    font-size: 1.1rem;
+}
+#competences h2 {
+    margin-bottom: 1%;
+}
+#competences h2 span {
+    color: #00d9ff;
+}
+#competences .skills {
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    padding: 5% 0 3% 0;
+    gap: 2%;
+    justify-content: center;
+}
+#competences .skills .skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+    padding: 5% 10%;
+    margin-top: 2%;
+    background: rgba(255, 255, 255, .05);
+    border-radius: 20px;
+    transition: .5s;
+}
+#competences .skills .skill:hover {
+    transform: scale(1.05)
+    translateY(-3px);
+    box-shadow: 0 0 30px rgba(0, 217, 255, .15);
+}
+#competences .skills .skill:hover img {
+    box-shadow: 0 0 5px #00d9ff;
+    transform: scale(1.05);
+}
+#competences .skills .skill .head {
+    display: flex;
+    gap: 7%;
+    align-items: center;
+
+}
+#competences .skills .skill .head .txt h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+#competences .skills .skill .head .txt p {
+    font-size: 1.2rem;
+    color: #b6c2d1;
+    
+
+}
+#competences .skills .skill img {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 217, 255, .08);
+    padding: 10px;
+    border-radius: 50%;
+    transition: .5s;
+}
+#competences .skills .skill .percent {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+#competences .skills .skill .progress {
+    width: 90%;
+    height: 5px;
+    background: #3e3e3e;
+    border-radius: 30px;
+    
+}
+#competences .skills .skill .progress p {
+    display: inline;
+}
+#competences .skills .skill .progress-bar {
+    background: linear-gradient(90deg, #00d9ff, white);
+    height: 100%;
+    border-radius: 30px;
+}
+#competences .skills .skill .progress .pourcentage {
+    width: 5%;
+    
+}
+#competences .experience {
+    display: flex;
+    background: rgba(255,255,255,.04);
+    padding: 0.5% 3%;
+    border-radius: 20px;
+    gap: 9.5%;
+}
+#competences .experience .exp {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 5%;
+}
+#competences .experience .exp span {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+#competences .experience .exp p {
+    font-size: 0.8rem;
+    color: #b6c2d1;
+
+}
+#competences .experience:hover .exp img {
+    box-shadow: 0 0 10px #00d9ff;
+    transform: scale(1.07)
+    rotate(360deg);
+}
+#competences .experience .exp img {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid #00d9ff;
+    transition: .5s;
+}
 #contact {
     position: relative;
     overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     padding-top: 5%;
     min-height: 100vh;
@@ -672,17 +806,7 @@ color: #00d9ff;
     padding: 5% 3% 10% 3%;
     background: radial-gradient(circle at top left , #00d9ff20, transparent 40%), #05070d;
 }
-#contact::before {
-    content: '';
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: #00d9ff;
-    filter: blur(180px);
-    opacity: .08;
-    top: -150px;
-    left: -150px;
-}
+
 #contact .texte {
     color: white;
 }
@@ -849,474 +973,273 @@ color: #00d9ff;
     text-align: center;
     color: gray;
 }
-@media (max-width:1500px) {
-    #profil .profil img {
-        width: 400px;
-        height: 400px;     
+
+
+
+
+
+/* RESPONSIVE*/
+
+/* Tablette */
+@media screen and (max-width: 992px){
+
+    h2{
+        font-size:30px;
     }
-    #profil .texte h1 {
-        font-size: 2.8rem;
+
+    #profil{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding:120px 30px 60px;
+        gap:60px;
     }
-    #profil .texte p {
-        font-size: 1.4rem;
+
+    #profil .texte{
+        min-width:100%;
     }
-    
-    #projets .cards {
-        display: grid;
-        grid-template-columns: repeat(2, 48%);
+
+    #profil .terminal{
+        margin:auto;
     }
-    #projets .cards .card {
-        height: 70vh;
+
+    #profil .texte .icon,
+    #profil .texte .buttons{
+        justify-content:center;
     }
-    #projets .cards .card img {
-        height: 60%;
+
+    #profil .profil img{
+        width:350px;
+        height:350px;
     }
-    #projets .cards .card .texte h3 {
-        font-size: 1.5rem;
+
+    /* A propos */
+
+    #apropos{
+        height:auto;
+        padding:80px 30px;
     }
-    
-    #contact {
-        margin-top: 10%;
+
+    #apropos .about{
+        flex-direction:column;
     }
-    #contact .message {
-        height: 70vh;
+
+    #apropos .about .image{
+        align-items:center;
+        text-align:center;
     }
-    #apropos .about .profil {
-        width: 380px;
-        height: 380px;
+
+    #apropos .about .info{
+        width:100%;
     }
+
+    #apropos .apropos .experience{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    /* Projets */
+
+    #projets .cards{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    #projets .card{
+        height:auto;
+    }
+
+    /*competences*/
+
+    #competences .skills {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3%;
+    }
+
+    /* Contact */
+
+    #contact{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    #contact .adresse{
+        width:100%;
+    }
+
+    #contact .message{
+        margin-top:0;
+    }
+
 }
 
-@media (max-width:1000px){
-    #profil {
-        flex-direction: column-reverse;
-        justify-content: center;
-        margin: 50px 0 0 0;
-        padding: 0;
-        gap: 0;
 
-    }
-    #profil .profil img {
-        width: 300px;
-        height: 300px;        
-    }
-    #profil .texte .terminals {
-        display: flex;
-        justify-content: center;
-        margin-top: 1%;
+/*MOBILE*/
 
-    }
-    #profil .texte {
-        text-align: center;
+@media screen and (max-width:768px){
 
-    }
-    #profil .texte h1 {
-        font-size: 3rem;
-        margin-top: 1%;
-    }
-    #profil .texte h2 {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-    
-    #profil .icons{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #profil .texte .icon {
-        margin: 1%;
-    }
-    #profil .buttons {
-        justify-content: center;
-    }
-    #profil .texte .buttons button {
-        margin-top: 0;
+    /* Navigation */
+
+    nav{
+        padding:18px 20px;
+        align-items:center;
     }
 
-    #apropos {
-        justify-content: center;
-        flex-direction: column;
-        gap: 5%;
+    nav img{
+        display:block;
     }
-     #apropos .about .profil {
-        margin-top: 5%;
-        width: 280px;
-        height: 280px;
-     }
-    #apropos .texte {
-        width: 95%;
+
+    nav ul{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#05070d;
+
+        display:flex;
+        flex-direction:column;
+        gap:0;
+
+        max-height:0;
+        overflow:hidden;
+
+        transition:.4s;
     }
-    
-    #projets .cards {
-        display: grid;
-        grid-template-columns: repeat(2, 49%);
+
+    nav ul li{
+        padding:18px;
+        text-align:center;
     }
-    #projets .cards .card {
-        height: 60vh;
+
+    #menu-toggle:checked ~ ul{
+        max-height:400px;
     }
-    #projets .cards .card img {
-        height: 55%;
+
+    /* Profil */
+
+    #profil .texte h1{
+        font-size:2.5rem;
     }
-    #projets .cards .card .texte h3 {
-        font-size: 1.5rem;
+
+    #profil .texte h2{
+        font-size:1.5rem;
     }
-    #projets .cards .card .texte img {
-        width: 25px;
-        height: 25px;
-    }
-    #projets .cards .card .texte p {
-        font-size: 1rem;
-    }
-    #contact {
-        margin-top: 10%;
-    }
-    #contact .texte p,#contact .texte span {
-        font-size: 1.2rem;
-    }
-    #contact .texte img {
-        width: 40px;
-        height: 43px;
-        padding: 9px;
-    }
-    #contact .texte .icon img {
-        width: 28px;
-        height: 28px;
-    }
-    #contact .message {
-        height: 65vh;
-    }
-     #contact .message p {
-        font-size: 0.8rem;
-     }
-    #contact .message button {
-        padding: 7px ;
-    }  
-    #apropos .about span {
-        margin-bottom: 100px;
-    }
-    #apropos .profil {
-        width: 280px;
-        height: 280px;
-    }
-}
-@media (max-width:850px){
-    #profil {
-        margin-top: 100px;
-    }
+
     #profil .texte p{
-        font-size: 1.2rem;
+        font-size:1.1rem;
     }
-    #profil .texte h2 {
-        font-size: 1.7rem;
-        margin: 0;
-    }
-    #apropos .terminal {
-        font-size: 0.9rem;
-    }
-    #apropos h2{
-        font-size: 1.5rem;
-    }
-    #apropos .about {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-    #apropos .about .profil {
-        margin: 1% auto;
-        width: 35%;
-        height: 35%;
-    }
-    #apropos .about .info {
-        justify-content: start;
-        width: 100%;
-    }
-    #apropos .about .info .infos {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
-    }
-     #apropos .about .info .infos .persos {
-        padding: 0;
 
-     }
-    #apropos .about .info .infos .perso {
-        width: 100%;
-        margin-bottom: 2%;
+    #profil .profil img{
+        width:280px;
+        height:280px;
+    }
 
+    #profil .texte .buttons{
+        flex-direction:column;
+        gap:20px;
     }
-    #apropos .about .info .infos .perso p{
-        font-size: 1rem;
-    }
-    #apropos .about .info .infos .perso span {
-        display: block;
-        margin: 0;
-    }
-    #apropos .texte {
-        width: 95%;
-    }
-    #apropos .texte p {
-        font-size: 1.2rem;
-    }
-    #apropos .about .info .icons button {
-        width: 30%;
-        font-size: 0.9rem;
-    }
-    nav img {
-        display: block;
-        margin-right: 20px;
-    }
-    nav {
-        backdrop-filter: blur(10px);
-        padding: 20px 33px;
-    }
-    ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        padding-right: 50px;
-        gap: 30px;
-    }
-    nav li a {
-        font-size: 20px;
-    }
-    
 
-    #menu-toggle:checked ~ ul {
-        display: flex;
+    #profil .texte .buttons button{
+        width:100%;
+        margin:0;
     }
-    #profil .texte {
-        width: 90%;
+
+    /* A propos */
+
+    #apropos .about .image img{
+        width:280px;
+        height:280px;
     }
-    #projets .cards {
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
+
+    #apropos .about .info{
+        padding:20px;
     }
-    #projets .cards .card {
-        height: 52vh;
+
+    #apropos .about .info .infos{
+        grid-template-columns:1fr;
+        gap:15px;
     }
-    #projets .cards .card .texte p{
-        line-height: 20px;
+
+    #apropos .about .icons{
+        flex-direction:column;
+        gap:20px;
+        align-items:center;
     }
-    #projets .cards .card img {
-        height: 52%;
+
+    #apropos .about .icon{
+        gap:20px;
     }
-    #projets .cards .card .texte img {
-        width: 20px;
-        height: 20px;
+
+    #apropos .apropos .experience{
+        grid-template-columns:1fr;
     }
-    #contact {
-        display: flex;
-        flex-wrap: wrap;
+
+    /* Contact */
+
+    #contact .texte h2{
+        width:100%;
+        font-size:2rem;
     }
-    #contact .texte p,#contact .texte span,#contact .adresse p,
-    #contact .adresse span,#contact .message p,#contact .message span{
-        font-size: 1rem;
-    }
-     #contact .message {
-        height: 70vh;
-    }
+
 }
-@media (max-width:650px) {
-
-    #profil .profil img {
-        width: 250px;
-        height: 250px;
-        
-    }
-    #profil .texte h1 {
-        font-size: 2rem;
-       
-    }
-    #profil .texte h2 {
-        font-size: 1.5rem;
-    }
-    #profil .texte {
-        width: 90%;
-
-    }
-    #profil .texte .icon img {
-    width: 20px;
-    height: 20px;
-    }
-    #profil .texte .buttons button {
-    margin-top: 15px;
-     padding: 8px 15px;
-    font-size: 13px;
 
 
-    }
-    #apropos .texte p {
-        font-size: 18px;
-        line-height: 1.8rem;
-    }
-    #apropos .texte .name {
-        font-size: 19px;
-    }
-    #apropos .texte h2 {
-        font-size: 1.6rem;
-    }
-    #apropos .experience .cards {
-        gap: 10px;
-    }
-    
-    #apropos .experience .cards .card h2 {
-        font-size: 1.5rem;
+/*PETITS SMARTPHONES*/
+
+@media screen and (max-width:480px){
+
+    nav p{
+        font-size:22px;
     }
 
-    #apropos .experience .cards .card p {
-        font-size: 0.6rem;
-    }
-    #projets h2 ,#contact h2{
-        font-size: 1.6rem;
-    }
-    #projets .cards {
-        display: grid;
-        grid-template-columns: repeat(1, 80%);
-        gap: 0;
-    }
-    #projets .cards .card {
-        padding: 0 5px;
-        height: 90%;
-    }
-    #projets .cards .card img{
-        width: 100%;
-        height: 49%;
-    }
-    #projets .cards .card span {
-        font-size: 0.9rem;
-    }
-    #projets .cards .card h3 {
-        font-size: 1.2rem;
+    h2{
+        font-size:26px;
     }
 
-    #contact .texte p,#contact .texte span {
-        font-size: 0.9rem;
-    }
-    #contact .texte img {
-        width: 40px;
-        height: 43px;
-        padding: 9px;
-    }
-    #contact .texte .icon img {
-        width: 20px;
-        height: 20px;
-    }
-    #contact .message {
-        height: 60vh;
+    #profil{
+        padding-top:100px;
     }
 
-     #contact .message p {
-        font-size: 0.7rem;
-     }
-    #contact .message button {
-        padding: 7px ;
-        font-size: 0.9rem;
+    #profil .texte h1{
+        font-size:2rem;
     }
-    #contact .message span {
-        font-size: 0.6rem;
-     }
-}
-@media (max-width:450px) {
-    #profil .profil img {
-        width: 170px;
-        height: 170px;
-        
-    }
-    #profil .terminal {
-        font-size: 0.8rem;
-        width: 250px;
-        padding: 4px;
-        height: 23px;
-        margin: 0;
 
+    #profil .texte h2{
+        font-size:1.3rem;
     }
-    #profil .terminal .cursor {
-    display: inline-block;
-    margin-top: 3px;
-    margin-left: 5px;
-    width: 3px;
-    height: 10px;
-    }
-    #profil .texte h1 {
-        font-size: 2rem;
-       
-    }
-    #profil .texte h2 {
-        font-size: 1.2rem;
-    }
-    #profil .texte p {
-        font-size: 13px;
-        line-height: 1.1rem;
-    }
-    #profil .texte .icon img {
-    width: 15px;
-    height: 15px;
-    }
-    #profil .texte .buttons button {
-    padding: 4px 7px;
-    font-size: 10px;
-    margin-top: 1%;
 
+    #profil .texte p{
+        font-size:1rem;
     }
-    #apropos .texte p.terminal {
-        font-size: 0.8rem;
-    }
-    #apropos .experience .cards .card {
-        height: 4.3rem;
-        border-radius: 15px;
-    }
-    #apropos .experience .cards .card h2 {
-        font-size: 16px;
-        margin-bottom: 0;
-    }
-    #apropos .experience .cards .card p {
-        font-size: .4rem;
-    }
-    #apropos .texte p {
-        font-size: 13px;
-        line-height: 1.3rem;
-    }
-    #apropos .texte .name {
-        font-size: 13px;
-    }
-    #projets p.terminal {
-        font-size: 0.8rem;
-    }
-    #projets p.section{
-        font-size: 1rem;
-        margin-bottom: 20px;
 
+    #profil .terminal{
+        width:100%;
+        font-size:.9rem;
     }
-    #projets h2 {
-        font-size: 1.6rem;
+
+    #profil .profil img{
+        width:220px;
+        height:220px;
     }
-    #projets .cards {
-        display: grid;
-        grid-template-columns: repeat(1, 80%);
-        gap: 0;
+
+    #apropos .about .image img{
+        width:220px;
+        height:220px;
     }
-    #projets .cards .card {
-        padding: 0 5px;
-        height: 95%;
+
+    #projets{
+        padding:90px 20px;
     }
-    #projets .cards .card img{
-        width: 100%;
-        height: 45%;
+    #competences .skills {
+    grid-template-columns: repeat(1, 2fr);
+    gap: 2%;
     }
-    #projets .cards .card span {
-        font-size: 0.7rem;
+    #projets .card .texte h3{
+        font-size:22px;
     }
-    #projets .cards .card .texte h3 {
-        font-size: 1rem;
+
+    #contact{
+        padding:80px 20px;
     }
-    #projets .cards .card .texte p {
-        font-size: 12px;
-        line-height: 1rem;
-    }
-    #contact .message {
-        height: 55vh;
-    }
+
 }
