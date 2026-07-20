@@ -142,7 +142,7 @@ li a::after {
     animation: fadeLeft 1s;
 }
 li a:hover::after {
-    width: auto;
+    width: 100%;
 }
 
 
