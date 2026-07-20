@@ -65,12 +65,15 @@ nav {
     z-index: 10;
 }
 nav p {
-    color: #0ef;
+    color: white;
     font-size: 25px;
     font-weight: 600;
     animation: fadeLeft 0.7s ease forwards;
     animation-delay: 0s;
     opacity: 0;
+}
+nav span {
+    color: #00d9ff;
 }
 #menu-toggle {
     display: none;
@@ -98,7 +101,23 @@ li {
     animation-delay: 0.3s;
 }
 
-
+.top img{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index:100;
+    transition: .4s;
+}
+.top img:hover {
+    transform: translateY(-5px)
+    scale(1.08);
+}
 li a {
     text-decoration: none;
     color: #f8fafc;
@@ -106,8 +125,21 @@ li a {
     font-weight: 500;
     transition: .5s;
 }
-li a:hover {
-    color: #0ef;
+li a::after {
+    content: '';
+    display: block;
+    margin-top: 1px;
+    border-radius: 10px;
+    width: 0;
+    height: 2px;
+    background: #00d9ff;
+    transition: .4s;
+}
+#profil:target, #apropos:target, #projets:target, #competences:target,#contact:target {
+    animation: fadeLeft 1s;
+}
+li a:hover::after {
+    width: 100%;
 }
 
 
@@ -154,6 +186,7 @@ li a:hover {
     width: 7px;
     height: 15px;
     background: #00d9ff;
+    animation: Blink 1s ease infinite
 }
 
 #profil .texte h1 {
@@ -223,7 +256,7 @@ color: #00d9ff;
     width: 40px;
     height: 40px;
     transition: 0.5s;
-    border: 1px solid #0ef;
+    border: 1px solid #00d9ff;
     border-radius: 50%;
 }
 #profil .texte .icon img:hover {
@@ -307,84 +340,6 @@ color: #00d9ff;
     border: 1px solid #00d9ff;
 }
 
-@keyframes fadeTop{
-    from{
-        opacity: 0;
-        transform: translateY(-200px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes fadeRight{
-    from{
-        opacity: 0;
-        transform: translateX(200px);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-@keyframes fadeBottom{
-    from{
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeTop1{
-    from{
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes fadeLeft{
-    from{
-        opacity: 0;
-        transform: translatex(-200px);
-    }
-    to{
-        opacity: 1;
-        transform: translatex(0);
-    }
-}
-@keyframes Curseur{
-    50%{opacity: 0;}
-}
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 29ch;
-    }
-}
-@keyframes blink {
-    50%{
-        border-color: transparent;
-    }
-}
-@keyframes battement {
-    0%{
-        box-shadow: 0 0 15px #00e5ff;
-    }
-    50%{
-        box-shadow: 0 0 40px #00e5ff;
-    }
-    100%{
-        box-shadow: 0 0 15px #00e5ff;
-    }
-}
 #apropos {
     width: 100%;
     height: auto;
@@ -463,6 +418,7 @@ color: #00d9ff;
 
 #apropos .about .info .infos .perso {
     display: flex;
+    align-items: center;
     background: rgba(255, 255, 255, .03);
     backdrop-filter: blur(15px);
     padding: 3% 1.2%;
@@ -480,19 +436,7 @@ color: #00d9ff;
     
 }
 
-@keyframes levitation {
-    0% ,100%{
-        transform: translateY(0);
-        box-shadow: 0 10px 20px rgba(0,0,0,.1),
-                    0 0 10px #00d9ff;
-    }
-    50%{
-        transform: translateY(-18px);
-        box-shadow: 0 35px 60px rgba(0,0,0,.2),
-                                0 0 20px #00d9ff,
-                                0 0 50px #00d9ff;
-    }
-}
+
 #apropos .about .icons {
     display: flex;
     justify-content: space-between;
@@ -525,6 +469,7 @@ color: #00d9ff;
     transition: 0.5s;
     font-weight: bold;
     font-size: 1.1rem;
+    cursor: pointer;
 }
 #apropos .about .info button:hover {
     transform: scale(1.05);
@@ -756,6 +701,68 @@ color: #00d9ff;
     height: 100%;
     border-radius: 30px;
 }
+#competences .skills .skill .html {
+    width: 90%;
+    animation: remplir90 2s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+#competences .skills .skill .css, #competences .skills .skill .bootstrap {
+    width: 85%;
+    animation: remplir85 2s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+#competences .skills .skill .js, #competences .skills .skill .git {
+    width: 70%;
+    animation: remplir70 2s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+#competences .skills .skill .responsive {
+    width: 75%;
+    animation: remplir75 2s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+
+}
+
+@keyframes remplir90 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 90%;
+        opacity: 1;
+    }
+}
+@keyframes remplir85 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 85%;
+        opacity: 1;
+    }
+}
+@keyframes remplir70 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 70%;
+        opacity: 1;
+    }
+}
+@keyframes remplir75 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 75%;
+        opacity: 1;
+    }
+}
 #competences .skills .skill .progress .pourcentage {
     width: 5%;
     
@@ -959,6 +966,7 @@ color: #00d9ff;
     font-size: 1.1rem;
     font-weight: bold;
     transition: .5s;
+    cursor: pointer;
 }
 #contact .message button:hover {
     transform: scale(1.02)
@@ -977,6 +985,103 @@ color: #00d9ff;
 
 
 
+@keyframes fadeTop{
+    from{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeRight{
+    from{
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeBottom{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeTop1{
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeLeft{
+    from{
+        opacity: 0;
+        transform: translatex(-200px);
+    }
+    to{
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+@keyframes Curseur{
+    50%{opacity: 0;}
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 29ch;
+    }
+}
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }
+}
+@keyframes Blink {
+    50%{
+        opacity: 0;
+    }
+}
+@keyframes battement {
+    0%{
+        box-shadow: 0 0 15px #00e5ff;
+    }
+    50%{
+        box-shadow: 0 0 40px #00e5ff;
+    }
+    100%{
+        box-shadow: 0 0 15px #00e5ff;
+    }
+}
+
+@keyframes levitation {
+    0% ,100%{
+        transform: translateY(0);
+        box-shadow: 0 10px 20px rgba(0,0,0,.1),
+                    0 0 10px #00d9ff;
+    }
+    50%{
+        transform: translateY(-18px);
+        box-shadow: 0 35px 60px rgba(0,0,0,.2),
+                                0 0 20px #00d9ff,
+                                0 0 50px #00d9ff;
+    }
+}
 
 
 /* RESPONSIVE*/
@@ -1141,6 +1246,10 @@ color: #00d9ff;
         max-height:400px;
     }
 
+    .top img {
+        width: 10%;
+        height: 10%;
+    }
     /* Profil */
 
     #profil {
