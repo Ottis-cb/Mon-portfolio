@@ -113,6 +113,9 @@ li {
     text-decoration: none;
     z-index:100;
     transition: .4s;
+    animation: fadeRight .7s ease forwards;
+    opacity: 0;
+    animation-delay: 2.4s;
 }
 .top img:hover {
     transform: translateY(-5px)
@@ -139,7 +142,7 @@ li a::after {
     animation: fadeLeft 1s;
 }
 li a:hover::after {
-    width: 100%;
+    width: auto;
 }
 
 
@@ -1044,7 +1047,7 @@ color: #00d9ff;
         width: 0;
     }
     to {
-        width: 29ch;
+        width: 22ch;
     }
 }
 @keyframes blink {
